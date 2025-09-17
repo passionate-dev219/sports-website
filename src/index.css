@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2112 Hockey Agency Design System - Premium Sports Brand Theme
+Dark, bold aesthetic with red and white accents - inspired by Nike, Under Armour, Bauer Hockey
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark theme primary colors */
+    --background: 220 13% 8%;
+    --foreground: 0 0% 98%;
+
+    /* Card backgrounds with subtle transparency */
+    --card: 220 13% 12%;
+    --card-foreground: 0 0% 98%;
+
+    /* Popover styling */
+    --popover: 220 13% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Brand primary - Hockey red */
+    --primary: 0 84% 60%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Secondary - Dark grey with red undertones */
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* Muted backgrounds */
+    --muted: 220 13% 15%;
+    --muted-foreground: 220 9% 70%;
+
+    /* Accent - Bright hockey red */
+    --accent: 0 84% 60%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Destructive actions */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders and inputs */
+    --border: 220 13% 20%;
+    --input: 220 13% 15%;
+    --ring: 0 84% 60%;
+
+    /* Design system enhancements */
+    --radius: 0.75rem;
+    
+    /* Hockey Agency specific colors */
+    --hockey-red: 0 84% 60%;
+    --hockey-red-dark: 0 84% 45%;
+    --ice-white: 0 0% 98%;
+    --arena-black: 220 13% 8%;
+    --steel-grey: 220 13% 18%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--hockey-red)), hsl(var(--hockey-red-dark)));
+    --gradient-dark: linear-gradient(135deg, hsl(var(--arena-black)), hsl(var(--steel-grey)));
+    
+    /* Shadows for premium feel */
+    --shadow-premium: 0 20px 40px -10px hsl(var(--arena-black) / 0.5);
+    --shadow-hockey: 0 10px 30px -10px hsl(var(--hockey-red) / 0.3);
+    
+    /* Typography scale */
+    --font-size-hero: 4rem;
+    --font-size-title: 2.5rem;
+    --font-size-subtitle: 1.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Light mode overrides (optional - we're primarily dark theme) */
+  .light {
+    --background: 0 0% 98%;
+    --foreground: 220 13% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 8%;
+    --primary: 0 84% 60%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 220 13% 95%;
+    --secondary-foreground: 220 13% 8%;
+    --muted: 220 13% 95%;
+    --muted-foreground: 220 9% 40%;
+    --accent: 0 84% 60%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 85%;
+    --input: 220 13% 90%;
+    --ring: 0 84% 60%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+/* Custom utility classes for 2112 Hockey Agency */
+@layer components {
+  .btn-hockey {
+    @apply bg-gradient-to-r from-[hsl(var(--hockey-red))] to-[hsl(var(--hockey-red-dark))] 
+           text-[hsl(var(--ice-white))] font-bold py-4 px-8 rounded-xl
+           transition-all duration-300 hover:scale-105 hover:shadow-[var(--shadow-hockey)]
+           active:scale-95;
+  }
+  
+  .text-hero {
+    @apply text-6xl md:text-8xl font-black tracking-tight;
+  }
+  
+  .text-title {
+    @apply text-4xl md:text-5xl font-bold tracking-tight;
+  }
+  
+  .text-subtitle {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+  
+  .card-premium {
+    @apply bg-[hsl(var(--card))] border border-[hsl(var(--border))] 
+           rounded-2xl p-8 shadow-[var(--shadow-premium)]
+           backdrop-blur-sm;
+  }
+  
+  .nav-link {
+    @apply text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))]
+           transition-colors duration-200 font-medium;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-[hsl(var(--ice-white))] to-[hsl(var(--hockey-red))] 
+           bg-clip-text text-transparent;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+}
