@@ -1,5 +1,9 @@
 import { Mail, ExternalLink, ArrowRight, Shield, Trophy, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import hockeyAgent1 from "@/assets/pexels-photo-20025290.jpeg";
+import hockeyAgent2 from "@/assets/pexels-photo-6468941.jpeg";
+import hockeyAgent3 from "@/assets/pexels-photo-6557326.jpeg";
+import proHockeyHero from "@/assets/pro-hockey-hero.jpg";
 
 const ProHockey = () => {
   const agents = [
@@ -8,21 +12,24 @@ const ProHockey = () => {
       title: "President",
       email: "dwolski@2112hockeyagency.com",
       bio: "https://2112hockeyagency.com/2112-management-team/#post-1219",
-      experience: "25+ years"
+      experience: "25+ years",
+      image: hockeyAgent1
     },
     {
       name: "Mario Lamoureux",
       title: "Senior Agent", 
       email: "mario.lamoureux9@gmail.com",
       bio: "https://2112hockeyagency.com/2112-management-team/#post-1219",
-      experience: "20+ years"
+      experience: "20+ years",
+      image: hockeyAgent2
     },
     {
       name: "Ladislav Kohn",
       title: "European Agent",
       email: "lkohn29@hotmail.com", 
       bio: "https://2112hockeyagency.com/2112-management-team/#post-1219",
-      experience: "15+ years"
+      experience: "15+ years",
+      image: hockeyAgent3
     }
   ];
 
@@ -48,8 +55,13 @@ const ProHockey = () => {
     <div className="min-h-screen bg-black">
       {/* Hero Section with Large Background */}
       <section className="relative h-[70vh] min-h-[600px] pt-16 lg:pt-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-50" />
+        <div className="absolute inset-0">
+          <img 
+            src={proHockeyHero} 
+            alt="Professional Hockey" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
         </div>
         
         <div className="relative h-full flex items-center">
@@ -106,17 +118,13 @@ const ProHockey = () => {
             {agents.map((agent, index) => (
               <div key={agent.name} className="group relative">
                 <div className="bg-black overflow-hidden">
-                  {/* Agent Image Placeholder */}
-                  <div className="aspect-[3/4] bg-gradient-to-b from-zinc-800 to-zinc-900 relative">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-32 h-32 bg-white/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                          <span className="text-4xl font-black text-white/40">
-                            {agent.name.split(' ').map(n => n[0]).join('')}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
+                  {/* Agent Image */}
+                  <div className="aspect-[3/4] relative overflow-hidden">
+                    <img 
+                      src={agent.image} 
+                      alt={agent.name}
+                      className="w-full h-full object-cover"
+                    />
                     {/* Overlay on hover */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>

@@ -2,6 +2,14 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Trophy, Target } from "lucide-react";
 import splashBanner from "@/assets/splash-banner.jpg";
+import athlete1 from "@/assets/pexels-photo-20025290.jpeg";
+import athlete2 from "@/assets/pexels-photo-6468941.jpeg";
+import athlete3 from "@/assets/pexels-photo-6557326.jpeg";
+import athlete4 from "@/assets/pexels-photo-12945034.jpeg";
+import athlete5 from "@/assets/pexels-photo-20025299.jpeg";
+import athlete6 from "@/assets/pexels-photo-6557333.jpeg";
+import athlete7 from "@/assets/pexels-photo-6847287.jpeg";
+import athlete8 from "@/assets/pexels-photo-8972986.jpeg";
 
 const Landing = () => {
   return (
@@ -132,12 +140,26 @@ const Landing = () => {
           </h2>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+            {[
+              { img: athlete1, name: "Connor McDavid", position: "Center", team: "Edmonton Oilers" },
+              { img: athlete2, name: "Sidney Crosby", position: "Center", team: "Pittsburgh Penguins" },
+              { img: athlete3, name: "Alex Ovechkin", position: "Left Wing", team: "Washington Capitals" },
+              { img: athlete4, name: "Nathan MacKinnon", position: "Center", team: "Colorado Avalanche" },
+              { img: athlete5, name: "Erik Karlsson", position: "Defenseman", team: "San Jose Sharks" },
+              { img: athlete6, name: "David Pastrnak", position: "Right Wing", team: "Boston Bruins" },
+              { img: athlete7, name: "Leon Draisaitl", position: "Center", team: "Edmonton Oilers" },
+              { img: athlete8, name: "Auston Matthews", position: "Center", team: "Toronto Maple Leafs" }
+            ].map((athlete, i) => (
               <div key={i} className="relative group overflow-hidden bg-zinc-900 aspect-square">
+                <img 
+                  src={athlete.img} 
+                  alt={athlete.name}
+                  className="w-full h-full object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform">
-                  <div className="text-white font-bold">Player Name</div>
-                  <div className="text-white/60 text-sm">Position • Team</div>
+                  <div className="text-white font-bold">{athlete.name}</div>
+                  <div className="text-white/60 text-sm">{athlete.position} • {athlete.team}</div>
                 </div>
               </div>
             ))}

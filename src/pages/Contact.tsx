@@ -60,72 +60,74 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      <div className="flex min-h-screen pt-16 lg:pt-20">
-        {/* Left Side - Image/Brand Section */}
-        <div className="hidden lg:flex lg:w-1/2 relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 to-black">
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-50" />
-          </div>
-          
-          <div className="relative z-10 flex flex-col justify-center px-12 py-20">
-            <div className="max-w-md">
-              <h1 className="text-5xl lg:text-6xl font-black text-white uppercase leading-tight mb-6">
-                Join The
-                <span className="block text-red-500">Elite</span>
-              </h1>
-              <p className="text-xl text-white/80 mb-8">
-                Take the first step towards elite hockey representation. Our team is ready to elevate your career.
-              </p>
-              
-              {/* Stats */}
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center space-x-4">
-                  <div className="text-3xl font-black text-red-500">300+</div>
-                  <div className="text-white/60">Players Represented</div>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="text-3xl font-black text-red-500">25</div>
-                  <div className="text-white/60">Years Experience</div>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="text-3xl font-black text-red-500">24/7</div>
-                  <div className="text-white/60">Professional Support</div>
-                </div>
+      {/* Hero Section */}
+      <section className="pt-24 lg:pt-32 pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 min-h-[80vh]">
+            {/* Left Side - Image/Brand Section */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 to-black rounded-lg">
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzIyMiIgb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-50 rounded-lg" />
               </div>
               
-              {/* Direct Contact */}
-              <div className="space-y-3">
-                <p className="text-white/60 text-sm uppercase tracking-wider">Direct Contact</p>
-                <a 
-                  href="mailto:dwolski@2112hockeyagency.com"
-                  className="flex items-center text-white hover:text-red-500 transition-colors"
-                >
-                  <Mail className="w-5 h-5 mr-3" />
-                  dwolski@2112hockeyagency.com
-                </a>
-                <a 
-                  href="tel:1-800-HOCKEY21"
-                  className="flex items-center text-white hover:text-red-500 transition-colors"
-                >
-                  <Phone className="w-5 h-5 mr-3" />
-                  1-800-HOCKEY21
-                </a>
+              <div className="relative z-10 flex flex-col justify-center p-8 lg:p-12 h-full">
+                <div>
+                  <h1 className="text-4xl lg:text-5xl font-black text-white uppercase leading-tight mb-6">
+                    Join The
+                    <span className="block text-red-500">Elite</span>
+                  </h1>
+                  <p className="text-xl text-white/80 mb-8">
+                    Take the first step towards elite hockey representation. Our team is ready to elevate your career.
+                  </p>
+                  
+                  {/* Stats */}
+                  <div className="space-y-4 mb-8">
+                    <div className="flex items-center space-x-4">
+                      <div className="text-3xl font-black text-red-500">300+</div>
+                      <div className="text-white/60">Players Represented</div>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                      <div className="text-3xl font-black text-red-500">25</div>
+                      <div className="text-white/60">Years Experience</div>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                      <div className="text-3xl font-black text-red-500">24/7</div>
+                      <div className="text-white/60">Professional Support</div>
+                    </div>
+                  </div>
+                  
+                  {/* Direct Contact */}
+                  <div className="space-y-3">
+                    <p className="text-white/60 text-sm uppercase tracking-wider">Direct Contact</p>
+                    <a 
+                      href="mailto:dwolski@2112hockeyagency.com"
+                      className="flex items-center text-white hover:text-red-500 transition-colors"
+                    >
+                      <Mail className="w-5 h-5 mr-3" />
+                      dwolski@2112hockeyagency.com
+                    </a>
+                    <a 
+                      href="tel:1-800-HOCKEY21"
+                      className="flex items-center text-white hover:text-red-500 transition-colors"
+                    >
+                      <Phone className="w-5 h-5 mr-3" />
+                      1-800-HOCKEY21
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        {/* Right Side - Form Section */}
-        <div className="w-full lg:w-1/2 bg-white flex items-center justify-center p-6 lg:p-12">
-          <div className="w-full max-w-md">
-            <div className="mb-8">
-              <h2 className="text-3xl font-black text-black uppercase mb-2">
-                Player Information
-              </h2>
-              <p className="text-gray-600">
-                Fill out this form to get started with 2112 Hockey Agency
-              </p>
-            </div>
+            {/* Right Side - Form Section */}
+            <div className="bg-white rounded-lg p-8 lg:p-12 flex flex-col justify-center">
+              <div className="mb-8">
+                <h2 className="text-3xl font-black text-black uppercase mb-2">
+                  Player Information
+                </h2>
+                <p className="text-gray-600">
+                  Fill out this form to get started with 2112 Hockey Agency
+                </p>
+              </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
@@ -251,27 +253,6 @@ const Contact = () => {
               </Button>
             </form>
 
-            {/* Mobile Contact Info */}
-            <div className="lg:hidden mt-8 pt-8 border-t border-gray-200">
-              <p className="text-gray-600 text-sm mb-4">Or contact us directly:</p>
-              <div className="space-y-2">
-                <a 
-                  href="mailto:dwolski@2112hockeyagency.com"
-                  className="flex items-center text-gray-900 hover:text-red-500 transition-colors"
-                >
-                  <Mail className="w-4 h-4 mr-2" />
-                  dwolski@2112hockeyagency.com
-                </a>
-                <a 
-                  href="tel:1-800-HOCKEY21"
-                  className="flex items-center text-gray-900 hover:text-red-500 transition-colors"
-                >
-                  <Phone className="w-4 h-4 mr-2" />
-                  1-800-HOCKEY21
-                </a>
-              </div>
-            </div>
-
             {/* Process Steps */}
             <div className="mt-8 pt-6 border-t border-gray-200">
               <h3 className="font-bold text-black uppercase text-xs tracking-wider mb-4">What Happens Next?</h3>
@@ -290,9 +271,10 @@ const Contact = () => {
                 </div>
               </div>
             </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

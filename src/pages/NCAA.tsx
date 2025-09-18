@@ -1,5 +1,11 @@
 import { Mail, Calendar, ArrowRight, Users, GraduationCap, Trophy, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import hockeyTraining from "@/assets/hockey-training.jpg";
+import hockeyArena from "@/assets/hockey-arena.jpg";
+import hockeyCelebration from "@/assets/hockey-celebration.jpg";
+import pexelsHockey1 from "@/assets/pexels-photo-12945034.jpeg";
+import pexelsHockey2 from "@/assets/pexels-photo-20025299.jpeg";
+import pexelsHockey3 from "@/assets/pexels-photo-6557333.jpeg";
 
 const NCAA = () => {
   const categories = [
@@ -52,25 +58,29 @@ const NCAA = () => {
       name: "Darryl Wolski",
       email: "dwolski@chfahockey.com",
       title: "Lead Family Advisor",
-      specialization: "NCAA & Junior Hockey"
+      specialization: "NCAA & Junior Hockey",
+      image: pexelsHockey1
     },
     {
       name: "Ladislav Kohn", 
       email: "lkohn29@hotmail.com",
       title: "European Advisor",
-      specialization: "International Players"
+      specialization: "International Players",
+      image: pexelsHockey2
     },
     {
       name: "Mario Lamoureux",
       email: "mario.lamoureux9@gmail.com",
       title: "Senior Advisor",
-      specialization: "USPORTS & CHL"
+      specialization: "USPORTS & CHL",
+      image: pexelsHockey3
     },
     {
       name: "Marcel Bacik",
       email: "hockey.mcorporation@gmail.com",
       title: "Development Advisor",
-      specialization: "Junior Development"
+      specialization: "Junior Development",
+      image: hockeyTraining
     }
   ];
 
@@ -78,7 +88,14 @@ const NCAA = () => {
     <div className="min-h-screen bg-black">
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] pt-16 lg:pt-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-900 to-black" />
+        <div className="absolute inset-0">
+          <img 
+            src={pexelsHockey1} 
+            alt="NCAA and Junior Hockey" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+        </div>
         
         <div className="relative h-full flex items-center">
           <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">
@@ -196,10 +213,12 @@ const NCAA = () => {
             {advisors.map((advisor) => (
               <div key={advisor.name} className="bg-zinc-900 p-6">
                 <div className="text-center mb-4">
-                  <div className="w-24 h-24 bg-white/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl font-black text-white/40">
-                      {advisor.name.split(' ').map(n => n[0]).join('')}
-                    </span>
+                  <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+                    <img 
+                      src={advisor.image} 
+                      alt={advisor.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 className="text-xl font-bold text-white">{advisor.name}</h3>
                   <p className="text-red-500 font-medium text-sm">{advisor.title}</p>
