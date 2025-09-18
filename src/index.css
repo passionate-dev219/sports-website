@@ -154,6 +154,10 @@ All colors MUST be HSL.
     @apply bg-gradient-to-r from-[hsl(var(--ice-white))] to-[hsl(var(--hockey-red))] 
            bg-clip-text text-transparent;
   }
+  
+  .text-hockey-red {
+    @apply text-[hsl(var(--hockey-red))];
+  }
 }
 
 @layer base {

@@ -17,26 +17,26 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
-      <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
+    <header className="fixed top-0 z-50 w-full bg-black">
+      <nav className="flex items-center justify-between px-6 lg:px-12 h-16 lg:h-20">
         {/* Logo */}
-        <Link to="/" className="flex items-center space-x-3 group">
-          <div className="text-title gradient-text">2112</div>
-          <div className="text-lg font-semibold text-muted-foreground group-hover:text-foreground transition-colors">
+        <Link to="/" className="flex items-center">
+          <div className="text-2xl lg:text-3xl font-black text-white tracking-tighter">2112</div>
+          <div className="ml-2 text-xs lg:text-sm font-medium text-white/60 uppercase tracking-wider">
             Hockey Agency
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-8 lg:space-x-12">
           {navItems.map((item) => (
             <Link
               key={item.href}
               to={item.href}
-              className={`nav-link ${
+              className={`text-sm font-medium uppercase tracking-wider transition-colors ${
                 isActive(item.href) 
-                  ? "text-primary font-semibold" 
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "text-red-500" 
+                  : "text-white/70 hover:text-white"
               }`}
             >
               {item.label}
@@ -45,28 +45,26 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden"
+        <button
+          className="md:hidden text-white p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </Button>
+        </button>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-background border-b border-border md:hidden">
-            <div className="container mx-auto px-4 py-4 space-y-4">
+          <div className="absolute top-full left-0 right-0 bg-black md:hidden">
+            <div className="px-6 py-4 space-y-4 border-t border-white/10">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`block nav-link ${
+                  className={`block text-sm font-medium uppercase tracking-wider transition-colors ${
                     isActive(item.href) 
-                      ? "text-primary font-semibold" 
-                      : "text-muted-foreground hover:text-foreground"
+                      ? "text-red-500" 
+                      : "text-white/70 hover:text-white"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
